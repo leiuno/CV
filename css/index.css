@@ -80,6 +80,7 @@ li{
   margin-left: auto;
   margin-right: auto;
   background-color: #ffffff;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5);
 }
 .user-card .welcome{
   background-color: #e6686a;
@@ -116,6 +117,7 @@ li{
 }
 .user-card .profile{
   padding: 50px;
+  margin-top: -400px;
 }
 
 .personal-info .text .title{
@@ -149,7 +151,80 @@ li{
 .media a:hover{
   background-color: #CF5D5F;
 }
-
+main .download-cv{
+  color: #000;
+  line-height: 16px;
+  border: 1px solid #CDCFD1;
+  background: #EFEFEF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #3d4451;
+  padding: 21px 55px;
+  display: inline-block;
+  margin: 32px 0;
+  transition: box-shadow 0.3s;
+  
+}
+main .download-cv:hover{
+  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.5);
+}
+main .download-wrapper{
+  text-align: center;
+}
+main .self-introduction{
+  display: block;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+h1,h2,h3,h4,h5{
+  font-weight: normal;
+}
+.skills{
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+.skills h2{
+  text-align: center;
+  font-size: 34px;
+  font-weight: 600;
+}
+.skills .progress-bar{
+  border: 1px solid #CF5D5F;
+  height: 2px;
+  border-radius: 3px;
+  margin: 4px 0 36px 0; 
+}
+.skills .progress{
+  height: 100%;
+  width: 69%;
+  background-color: #CF5D5F;
+}
+.skills > ul{
+  background: #FFF;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5);
+  padding: 42px 50px 10px 50px;
+  margin-top: 35px;
+  color: #3d4451;
+}
+.skills > ul > li{
+  float: left;
+  width: 48%;
+}
+.skills > ul > li:nth-child(even){
+  float: right;
+}
+.skills h3{
+  font-size: 14px;
+  line-height: 1.1;
+}
 
 
 
