@@ -7,16 +7,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_8d5l8fzk5b87iudi.css">
+  
   <style type="text/css">
+    .site-welcome{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #888;
+      z-index: 2;
+      justify-content: center;
+      align-items: center;
+    }
+    .site-welcome.active{
+      display: flex;
+    }
     .loading{
-      width: 300px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
+      
       position: relative;
     }
     .loading::before,.loading::after{
       content: '';
+      width: 0;
+      height: 0;
       background: black;
-      border: 1px solid;
       border-radius: 50%;
       position: absolute;
       top: 0;
@@ -38,21 +56,7 @@
       }
     }
 
-    .site-welcome{
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #888;
-      z-index: 1;
-      justify-content: center;
-      align-items: center;
-    }
-    .site-welcome.active{
-      display: flex;
-    }
+
   </style>
 </head>
 <body>
@@ -60,17 +64,31 @@
       <div class="loading"></div>
   </div>
   
-  <div class="topNavBar">
-    <div class="clearfix">
+  <div id="topNavBar" class="topNavBar">
+    <div clearfix">
         <a href="#" class="logo">
             <span class="rs">RS</span><span class="card">card</span>
           </a>
-          <nav class="navBar">
+          <nav class="navBar menu">
             <ul class="clearfix">
               <li><a href="#">关于</a></li>
               <li><a href="#">技能</a></li>
-              <li><a href="#">作品</a></li>
-              <li><a href="#">博客</a></li>
+              <li class="menu-trigger">
+                <a href="#">作品</a>
+                <ul class="submenu">
+                  <li>作品1</li>
+                  <li>作品2</li>
+                  <li>作品3</li>
+                </ul>
+              </li>
+              <li class="menu-trigger">
+                <a href="#">博客</a>
+                <ul class="submenu">
+                  <li>博客1</li>
+                  <li>博客2</li>
+                  <li>博客3</li>
+                </ul>
+              </li>
               <li><a href="#">日历</a></li>
               <li><a href="#">联系方式</a></li>
               <li><a href="#">其他</a></li>
@@ -183,8 +201,12 @@
     </ul>
   </section>
   <script>
-    siteWelcome.classList.remove('active');
+    setTimeout(function(){
+      siteWelcome.classList.remove('active');
+    },1000)
+    
   </script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
 

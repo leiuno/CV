@@ -4,7 +4,6 @@
 }
 body{
   background-color: #efefef;
-  position: relative;
 }
 a{
   text-decoration: none;
@@ -18,11 +17,20 @@ li{
   clear: both;
 }
 .topNavBar{
-  margin-top: 25px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
+  color: #b7b7b7;
+  transition: all 0.5s;
+  padding: 20px 0;
+}
+.topNavBar.sticky{
+  background: #FFF;
+  color: #3d4451;
+  padding: 10px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 .navBar{
   float: right;
@@ -36,7 +44,7 @@ li{
   float: left;
 }
 .navBar > ul > li > a{
-  color: #b7b7b7;
+  color: inherit;
   font-size: 12px;
   font-weight: bold;
   margin: 0 17px;
@@ -45,10 +53,56 @@ li{
   border-top: 3px transparent;
   border-bottom: 3px transparent;
   display: block;
+  position: relative;
 }
 
-.navBar > ul > li > a:hover{
-  border-bottom: 3px #e6686a solid;
+.navBar > ul > li.active > a::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  height: 3px;
+  background: #e6686a;
+  animation: menuSlide .3s;
+}
+@keyframes menuSlide{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+.topNavBar .menu-trigger{
+  position: relative;
+}
+.topNavBar .submenu {
+  display: none;
+  background: #FFF;
+  color: #3d4451;
+  position: absolute;
+  right: 17px;
+  top: 110%;
+  font-size: 14px;
+  cursor: pointer;
+}
+.topNavBar li.active> .submenu{
+  display: block;
+  animation: submenuSlide .3s;
+}
+@keyframes submenuSlide{
+  0%{
+    margin-right: 50%;
+  }
+  100%{
+    margin-right: 0;
+  }
+}
+.topNavBar .submenu > li{
+  white-space: nowrap;
+  padding: 5px 10px;
 }
 
 .topNavBar .logo{
@@ -151,6 +205,9 @@ li{
 }
 .media a:hover{
   background-color: #CF5D5F;
+}
+main {
+  margin-top: 60px;
 }
 main .download-cv{
   color: #000;
