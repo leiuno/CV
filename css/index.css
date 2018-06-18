@@ -4,6 +4,7 @@
 }
 body{
   background-color: #efefef;
+  position: relative;
 }
 a{
   text-decoration: none;

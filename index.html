@@ -7,23 +7,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_8d5l8fzk5b87iudi.css">
+  <style type="text/css">
+    .loading{
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+    .loading::before,.loading::after{
+      content: '';
+      background: black;
+      border: 1px solid;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      animation: s 1.5s linear infinite;
+    }
+    .loading::after{
+      animation-delay: 0.75s;
+    }
+    @keyframes s{
+      0%{
+        width: 0; height: 0; opacity: 1;
+      }
+      100%{
+        width: 100px; height: 100px; opacity: 0;
+      }
+    }
+
+    .site-welcome{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #888;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+    }
+    .site-welcome.active{
+      display: flex;
+    }
+  </style>
 </head>
 <body>
-  <div class="topNavBar clearfix">
-    <a href="#" class="logo">
-      <span class="rs">RS</span><span class="card">card</span>
-    </a>
-    <nav class="navBar">
-      <ul class="clearfix">
-        <li><a href="#">关于</a></li>
-        <li><a href="#">技能</a></li>
-        <li><a href="#">作品</a></li>
-        <li><a href="#">博客</a></li>
-        <li><a href="#">日历</a></li>
-        <li><a href="#">联系方式</a></li>
-        <li><a href="#">其他</a></li>
-      </ul>
-    </nav>
+  <div id="siteWelcome"class="site-welcome active">
+      <div class="loading"></div>
+  </div>
+  
+  <div class="topNavBar">
+    <div class="clearfix">
+        <a href="#" class="logo">
+            <span class="rs">RS</span><span class="card">card</span>
+          </a>
+          <nav class="navBar">
+            <ul class="clearfix">
+              <li><a href="#">关于</a></li>
+              <li><a href="#">技能</a></li>
+              <li><a href="#">作品</a></li>
+              <li><a href="#">博客</a></li>
+              <li><a href="#">日历</a></li>
+              <li><a href="#">联系方式</a></li>
+              <li><a href="#">其他</a></li>
+            </ul>
+          </nav>
+    </div>
+    
   </div>
   <div class="banner">
     <div class="mask"></div>
@@ -128,7 +182,9 @@
       <li>原生JS</li>
     </ul>
   </section>
-
+  <script>
+    siteWelcome.classList.remove('active');
+  </script>
 </body>
 </html>
 
