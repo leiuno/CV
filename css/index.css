@@ -56,7 +56,8 @@ li{
   position: relative;
 }
 
-.navBar > ul > li.active > a::after{
+.navBar > ul > li.active > a::after,
+.navBar > ul > li.highlight > a::after{
   content: '';
   display: block;
   position: absolute;
@@ -284,7 +285,7 @@ h1,h2,h3,h4,h5{
   line-height: 1.1;
 }
 .productions{
-  height: 500px;
+  height: 1000px;
 }
 
 
