@@ -285,7 +285,24 @@ h1,h2,h3,h4,h5{
   line-height: 1.1;
 }
 .productions{
-  height: 1000px;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+.productions h2{
+  text-align: center;
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+.swiper-container {
+  width: 801px;
+  height: 534px;
+}
+.swiper-button-next, .swiper-button-prev{
+  top: 54%;
 }
 
 
