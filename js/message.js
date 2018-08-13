@@ -41,15 +41,5 @@ var query = new AV.Query('message')
   })
 
 
-/*
-//创建TestObject表
-var TestObject = AV.Object.extend('TestObject');
-//在表中创建一行数据
-var testObject = new TestObject();
 
-testObject.save({
-  words: 'Hello World!'
-}).then(function(object) {
-  alert('LeanCloud Rocks!');
-})
-*/
+  
